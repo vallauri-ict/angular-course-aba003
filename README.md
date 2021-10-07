@@ -1,4 +1,4 @@
-<h1 align="center">Angular - By Edoardo Ababei.</h1>
+<h1 align="center">Angular - By Edoardo Ababei 5B Inf.</h1>
 
 <p align="center">
   <img src="https://camo.githubusercontent.com/ff0218fac4184c5a06716e2a07085bba2d6b648b3b3240933f21246845f50298/68747470733a2f2f636f736d69632d73332e696d6769782e6e65742f39313862333030302d313531372d313165392d623633392d6666396162616261363862612d616e67756c61722e6a70673f773d31323030" alt="angular-logo" width="140px" height="120px"/>
