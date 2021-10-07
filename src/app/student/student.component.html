@@ -1,1 +1,8 @@
-<p>student works!</p>
+<!-- <h4 [ngStyle] = "{ backgroundColor: student.gender == 'F' ? 'pink' : 'cyan' }">{{ student.name }} - {{ student.hobby }}</h4> -->
+<p class = "clickable" (click) = "onStudentClick()" [ngClass] = "{
+    'female': student.gender == 'F',
+    'male': student.gender == 'M',
+    'underlined': student.hobby == 'Paddle'
+}">
+{{ student.name }} - {{ student.hobby }}
+</p>
