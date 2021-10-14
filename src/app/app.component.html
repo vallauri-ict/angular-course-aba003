@@ -44,8 +44,15 @@
   </div>
 
   <h2>The Students:</h2>
-  <app-student></app-student>
-  <app-student></app-student>
-  <app-student></app-student>
+
+ <!-- <div  *ngFor="let item of studentList">
+   {{item.name}} - {{item.hobby}}
+ </div> -->
+ <h4 *ngFor="let item of studentList;let i =index" >  
+   <span *ngIf="i%2==0" >{{i}} =></span>                     <!--Ripete per ogni item della student list appp-student-->
+            <app-student [student]="item"></app-student>       <!--si fa comunicare il component.ts con lo student.ts e di l ametto input-->
+                                                                <!--nome con cui viene passato tra quadre e valore-->
+ </h4>
+  
 
 </div>
