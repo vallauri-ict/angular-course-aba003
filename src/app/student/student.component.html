@@ -4,5 +4,15 @@
     'male': student.gender == 'M',
     'underlined': student.hobby == 'Paddle'
 }">
-{{ student.name }} - {{ student.hobby }}
+{{ student.name }}
+<!-- <span *ngIf="student.isPro" >(professionista)</span>
+<span *ngIf="!student.isPro" >( NON professionista)</span> -->
+
+<span *ngIf="student.isPro;else noPro" >(professionista)</span>
+<ng-template #noPro>
+    <span>(dilettante)</span>
+</ng-template>
+
+
+ - {{ student.hobby }}
 </p>
