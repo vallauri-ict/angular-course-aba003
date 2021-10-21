@@ -1,18 +1,16 @@
 <!-- <h4 [ngStyle] = "{ backgroundColor: student.gender == 'F' ? 'pink' : 'cyan' }">{{ student.name }} - {{ student.hobby }}</h4> -->
-<span class = "clickable" (click) = "onStudentClick()" [ngClass] = "{
+<span class="clickable" (click)="onStudentClick()" [ngClass]="{
     'female': student.gender == 'F',
     'male': student.gender == 'M',
     'underlined': student.hobby == 'Paddle'
 }">
-{{ student.name }}
-<!-- <span *ngIf="student.isPro" >(professionista)</span>
+    {{ student.name }}
+    <!-- <span *ngIf="student.isPro" >(professionista)</span>
 <span *ngIf="!student.isPro" >( NON professionista)</span> -->
 
-<span *ngIf="student.isPro;else noPro" >(professionista)</span>
-<ng-template #noPro>
-    <span>(dilettante)</span>
-</ng-template>
-
-
- - {{ student.hobby }}
+    <span *ngIf="student.isPro;else noPro">(professionista)</span>
+    <ng-template #noPro>
+        <span>(dilettante)</span>
+    </ng-template>
+    - {{ student.hobby }}
 </span>
