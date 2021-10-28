@@ -3,3 +3,14 @@
     cursor: pointer;
     padding: 4px 10px;
 }
+
+.delete{
+    height: 30px;
+    width: 80px;
+    color: white;
+    background-color: red;
+    margin-left: 10px;
+    font-weight: 100;
+    text-align: center;
+    border-radius: 5px;
+}

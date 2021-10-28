@@ -54,15 +54,24 @@
   <label for="txtName">Student name:</label>
   <input type="text" id="txtName" #txtName [(ngModel)]="studentName">
   <!--binding bidirezionale-->
-  <div>
-    <input id="male" type="radio" value="M" name="gender" [(ngModel)]="studentGender">
-    <label for="male">Male</label>
+  <div id="genders">
+    <div>
+      <input id="male" type="radio" value="M" name="gender" [(ngModel)]="studentGender">
+      <label for="male">Male</label>
+    </div>
+  
+    <div>
+      <input id="female" type="radio" value="F" name="gender" [(ngModel)]="studentGender">
+      <label for="female">Female</label>
+    </div>
   </div>
+  
 
-  <div>
-    <input id="female" type="radio" value="F" name="gender" [(ngModel)]="studentGender">
-    <label for="female">Female</label>
-  </div>
+  <select [(ngModel)]="studentHobby" >
+    <option  *ngFor="let hobby of hobbies"  [value]='hobby' >
+      {{hobby}}
+    </option>
+  </select>
 
   <button [disabled]="studentName.length==0" (click)="onAddStudent()">Add student</button>
 
@@ -75,7 +84,9 @@
   <h4 *ngFor="let item of studentList;let i =index">
     <span *ngIf="i%2==0">{{i}} =></span>
     <!--Ripete per ogni item della student list appp-student-->
-    <app-student [student]="item"></app-student>
+    <!-- aggiungo l' evento creato in student.ts e lo delego a onstudentdeleteveent su appcomponent.ts -->
+    <app-student (studentDeleteEvent)="onStudentDeleteEvent($event)" [student]="item"></app-student>
+    <!-- <button class="delete" (click)="onDeleteStudent(i)">Delete</button> -->
     <!--si fa comunicare il component.ts con lo student.ts e di l ametto input-->
     <!--nome con cui viene passato tra quadre e valore-->
   </h4>

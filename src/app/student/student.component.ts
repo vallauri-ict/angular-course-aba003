@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-student',
@@ -9,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 // istanziazione eseguita in automatico con tag <app-studenti>
 export class StudentComponent implements OnInit {
 @Input() student:any;
+@Output() studentDeleteEvent=new EventEmitter<any>();
   constructor() {
     
   }
@@ -23,6 +24,10 @@ export class StudentComponent implements OnInit {
 
   ngOnInit(): void {
     this.randomStudentPro(); //va meso qui non nel costruttore perchè l html nel costruttore non cè ancora
+  }
+
+  onDeleteStudent(){
+    this.studentDeleteEvent.emit(this.student);
   }
 
   onStudentClick() {
